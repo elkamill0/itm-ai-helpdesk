@@ -1,13 +1,14 @@
 import pytesseract
 from PIL import Image, ImageFilter, ImageEnhance
 
+
 class OCRProcessor:
     def __init__(self, image_path: str):
         self.image_path = image_path
         self.image = self.load_image()
 
     def load_image(self) -> Image.Image:
-        return Image.open(self.image_path).convert('L')
+        return Image.open(self.image_path).convert("L")
 
     def sharpen_image(self) -> None:
         self.image = self.image.filter(ImageFilter.SHARPEN)
@@ -17,8 +18,9 @@ class OCRProcessor:
         enhancer = ImageEnhance.Brightness(self.image)
         self.image = enhancer.enhance(1.5)
 
-    def convert_to_text(self, lang: str = 'pol') -> str:
+    def convert_to_text(self, lang: str = "pol") -> str:
         return pytesseract.image_to_string(self.image, lang=lang)
+
 
 if __name__ == "__main__":
     obraz = "../resources/image.png"

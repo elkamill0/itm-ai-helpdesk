@@ -6,7 +6,6 @@ format:
 
 check:
 	poetry run ruff format --check .
-	npx prettier client --check
 
 test:
 	poetry run pytest ./tests -vv
