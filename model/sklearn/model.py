@@ -53,9 +53,9 @@ class FAQPipeline:
 
     def __load_faq(self, file_path: str, *col_names: str) -> pd.DataFrame:
         df = pd.read_excel(file_path)
-        df.dropna(subset=col_names, inplace=True)
+        df[list(col_names)] = df[list(col_names)].fillna("")
+        df[list(col_names)] = df[list(col_names)].astype(str)
         df["combined"] = df[col_names[0]]
-
         for col in col_names[1:]:
             df["combined"] += " " + df[col]
 
