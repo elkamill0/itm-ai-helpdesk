@@ -33,7 +33,7 @@ class TextCorrector:
 
 if __name__ == "__main__":
     dictionary = TextCorrector.load_reference_words_from_json(
-        "../resources/corrections.json"
+        "../resources/output.json"
     )
 
     input_text = "GRUPA AE procedure 'GG_NORMĄ MAT_TREF Tine: 98, cal: 7"  # <- wynik z converter.py
