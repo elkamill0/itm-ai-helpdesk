@@ -38,7 +38,7 @@ class enhancedOCR:
         self.image_path = image_path
 
     def convert_to_text(self) -> str:
-        reader = easyocr.Reader(["pl", "en"])
+        reader = easyocr.Reader(["pl", "en"], gpu=False)
 
         result = reader.readtext(self.image_path)
 

@@ -59,4 +59,4 @@ def test_enhanced_ocr(mock_reader):
     text = enhanced.convert_to_text()
 
     assert text == "Pierwszy Drugi Trzeci"
-    mock_reader.assert_called_once_with(["pl", "en"])
+    mock_reader.assert_called_once_with(["pl", "en"], gpu=False)
