@@ -1,4 +1,5 @@
 # wave4-spell-altar
+
 Repository for the Spell Altar project realized during WAVE4 by the Spell Altar team supervised by Świta Znachora.
 
 ## Opis projektu
@@ -7,40 +8,66 @@ Spell Altar to inteligentny system wspomagający dział helpdesku w obsłudze zg
 
 ## Funkcjonalności
 
-* **Automatyczna analiza zgłoszeń:** AI sprawdza zgłoszenia przed obsługą przez pracownika. W przypadku prostych problemów proponuje klientowi rozwiązanie.
-* **Obsługa plików Excel:** System korzysta z bazy wiedzy w plikach Excel, zawierającej opisy błędów i ich rozwiązania.
-* **OCR i obsługa obrazów:** Możliwość przesłania obrazka z opisem błędu – system rozpoznaje tekst z grafiki.
-* **Korekta literówek:** Wykrywanie i korekta literówek w opisach błędów.
-* **Panel wsparcia:** Pracownik supportu weryfikuje odpowiedzi AI i przekazuje trudniejsze zgłoszenia do programistów.
-* **Aktualizacja bazy wiedzy:** Możliwość dodania nowych plików Excel oraz aktualizacji istniejącej bazy.
+-   **Automatyczna analiza zgłoszeń:** AI sprawdza zgłoszenia przed obsługą przez pracownika. W przypadku prostych problemów proponuje klientowi rozwiązanie.
+-   **Obsługa plików Excel:** System korzysta z bazy wiedzy w plikach Excel, zawierającej opisy błędów i ich rozwiązania.
+-   **OCR i obsługa obrazów:** Możliwość przesłania obrazka z opisem błędu – system rozpoznaje tekst z grafiki.
+-   **Korekta literówek:** Wykrywanie i korekta literówek w opisach błędów.
+-   **Panel wsparcia:** Pracownik supportu weryfikuje odpowiedzi AI i przekazuje trudniejsze zgłoszenia do programistów.
+-   **Aktualizacja bazy wiedzy:** Możliwość dodania nowych plików Excel oraz aktualizacji istniejącej bazy.
 
 ## Technologie
 
-* **Backend:** Django
-* **AI:** Sentence Transformer, sklearn (TF-IDF, cosine similarity)
-* **OCR:** pytesseract, easyocr
-* **Korekta literówek:** pyspellchecker
-* **Zarządzanie projektem:** Poetry, GitHub Actions (CI/CD), Ruff, Mypy
+-   **Backend:** Django
+-   **AI:** Sentence Transformer, sklearn (TF-IDF, cosine similarity)
+-   **OCR:** pytesseract, easyocr
+-   **Korekta literówek:** pyspellchecker
+-   **Zarządzanie projektem:** Poetry, GitHub Actions (CI/CD), Ruff, Mypy
 
-## Instalacja
+## Instalacja (localhost) Ubuntu/Windows
 
-1. **Sklonuj repozytorium:**
+1. **Zainstaluj make, aby uruchamiać komendy z pliku Makefile**
+
+2. **Zainstaluj Poetry**
+
+```
+https://python-poetry.org/docs/
+```
+
+3. **Zainstaluj TesseractOCR**
+
+```
+https://tesseract-ocr.github.io/tessdoc/Installation.html
+```
+
+For ubuntu run:
+
+```
+make tesseract
+```
+
+4. **Sklonuj repozytorium:**
+
 ```
 git clone https://github.com/knsiczarnamagia/wave4-spell-altar.git
 ```
-2. **Przejdź do katalogu projektu:**
+
+5. **Przejdź do katalogu projektu:**
+
 ```
 cd wave4-spell-altar
 ```
-3. **Zainstaluj zależności:**
+
+6. **Zainstaluj zależności:**
 
 ```
 make install
 ```
 
-1. **Skonfiguruj zmienne środowiskowe i plik bazy wiedzy (Excel).**
+7. **Uruchom aplikację**
 
-2. **Uruchom aplikację zgodnie z dokumentacją projektu.**
+```
+make run
+```
 
 ---
 
@@ -49,9 +76,9 @@ make install
 1. **Klient zgłasza problem przez formularz (tekst/obrazek).**
 2. **System analizuje zgłoszenie:**
 
-* Rozpoznaje tekst z obrazka (OCR).
-* Koreguje literówki.
-* Wyszukuje rozwiązanie w bazie wiedzy.
+-   Rozpoznaje tekst z obrazka (OCR).
+-   Koreguje literówki.
+-   Wyszukuje rozwiązanie w bazie wiedzy.
 
 ---
 
