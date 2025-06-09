@@ -1,13 +1,18 @@
+import os
 import pandas as pd
 import json
 import re
+
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DEFAULT_OUTPUT_PATH = os.path.join(BASE_DIR, "resources", "output.json")
 
 
 class ExcelConverter:
     def __init__(
         self,
         excel_filename,
-        output_filename="../resources/output.json",
+        output_filename=DEFAULT_OUTPUT_PATH,
         ignored_columns=None,
     ):
         self.excel_filename = excel_filename
@@ -33,6 +38,7 @@ class ExcelConverter:
         self.unique_words = sorted(set(words), key=words.index)
 
     def save_to_json(self):
+        os.makedirs(os.path.dirname(self.output_filename), exist_ok=True)
         json_output = json.dumps(self.unique_words, ensure_ascii=False)
         with open(self.output_filename, "w", encoding="utf-8") as f:
             f.write(json_output)

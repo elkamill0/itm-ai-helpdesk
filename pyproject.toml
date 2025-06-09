@@ -1,26 +1,27 @@
-[project]
+[tool.poetry]
 name = "spell-altar"
-version = "0.10.0"
+version = "0.10.1"
 description = ""
-authors = []
+authors = ["spell-altar-team"] 
 readme = "README.md"
-requires-python = ">=3.12"
-dependencies = [
-    "ruff (>=0.9.2)",
-    "pytest (>=8.3.4)",
-    "structlog (>=25.1.0)",
-    "python-dotenv (>=1.0.1)",
-    "scikit-learn (>=1.6.1,<2.0.0)",
-    "pandas (>=2.2.3,<3.0.0)",
-    "sentence-transformers (>=3.4.1,<4.0.0)",
-    "pyspellchecker (>=0.8.2,<0.9.0)",
-    "pydantic (>=2.11.1,<3.0.0)",
-    "easyocr (>=1.7.2,<2.0.0)",
-    "openpyxl (>=3.1.5,<4.0.0)",
-    "pytesseract (>=0.3.13,<0.4.0)",
-]
+
+[tool.poetry.dependencies]
+python = ">=3.12"
+ruff = ">=0.9.2"
+pytest = ">=8.3.4"
+structlog = ">=25.1.0"
+python-dotenv = ">=1.0.1"
+scikit-learn = ">=1.6.1,<2.0.0"
+pandas = ">=2.2.3,<3.0.0"
+sentence-transformers = ">=3.4.1,<4.0.0"
+pyspellchecker = ">=0.8.2,<0.9.0"
+pydantic = ">=2.11.1,<3.0.0"
+easyocr = ">=1.7.2,<2.0.0"
+openpyxl = ">=3.1.5,<4.0.0"
+pytesseract = ">=0.3.13,<0.4.0"
+django = "^5.2.2"
+djangorestframework = "^3.16.0"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
-
